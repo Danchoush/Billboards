@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбор отчета</title>
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='start.css')}}">
+    <style type="text/css">
+        .named_list {
+            font-size: 18pt;
+            color: grey;
+            display: inline-block;
+            width: 500px;
+            text-align: left;
+        }
+        body {
+            background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+    <h4 align="center"> Меню работы с отчетами</h4>
+    <center>
+        {% for report in report_list %}
+        <form action='' method='POST'>
+            <label for="create_rep" class="named_list"> {{report['rep_name']}}</label>
+            <input type="submit" name="create_rep" id="create_rep" value="Создать">
+            <input type="submit" name="view_rep" value="Смотреть">
+            <input type="hidden" name="rep_id" value="{{report['rep_id']}}">
+            <br><br><br>
+        </form>
+        {% endfor %}
+    </center>
+<br><br><br>
+<center>
+    <h4> {{mes}} </h4>
+    </center>
+
+<br><br><br>
+<div align = center>
+      <a href={{url_for('query')}}> Вернутся на главную страницу</a>
+    </div>
+</body>
+</html>

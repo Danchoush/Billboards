@@ -1,0 +1,1 @@
+Select * from pay_per_month where p_month = '$input_month' and p_year='$input_year'

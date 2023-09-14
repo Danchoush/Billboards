@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление заказа</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+   <link rel="stylesheet" href="{{url_for('static', filename='nicepage.css')}}" media="screen">
+<link rel="stylesheet" href="{{url_for('static', filename='chose.css')}}" media="screen">
+
+    <style type="text/css">
+        a {
+        font-size  : 20pt;
+        color: #913518;
+        font-weight: bold;
+        }
+<!--        url(https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg?w=2000);-->
+   body {
+        background-color:  white;
+        background-size: cover;
+   }
+     .block2 {
+     font-size  : 25pt;
+        font-weight: bold;
+    width: 500px;
+    background: #fc0;
+    padding: 5px;
+    border: solid 1px black;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+   }
+   span {
+    font-size: 16pt;
+    font-family: Oswald, sans-serif !important; и
+}
+input {
+    font-size: 14pt;
+    height: 30px;
+    font-family: Oswald, sans-serif !important;
+}
+
+  </style>
+
+
+
+<body>
+<header class="u-clearfix u-gradient u-header u-header" id="sec-217c"><div class="u-clearfix u-sheet u-sheet-1">
+    <h2 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">Оформление заказа.</h2>
+    <a href="{{url_for('query')}}" class="u-btn u-button-style u-none u-text-custom-color-1 u-text-hover-palette-5-dark-3 u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="np://user.desktop.nicepage.com/Site_580601497/images/3809010.png" alt=""></span>&nbsp;<< Вернутся</a>
+      </div></header>
+<!--    <div align="center">-->
+<!--        <br><br>-->
+<!--        {% if basket %}-->
+<!--        <a href="{{url_for('bp_order.save_order')}}"> Оформить заказ </a>-->
+<!--        <br><br>-->
+<!--        {% endif %}-->
+<!--        <a href="{{url_for('query')}}"> Вернуться в меню пользователя </a>-->
+<!--    </div>-->
+    {% import 'basket_utils.html' as utils %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h2>Все доступные билборды</h2>
+                {% if items %}
+                    {% for item in items %}
+                        {{ utils.render_item(item, item[0], show_form=True, show_amount=False, date_today=date_today) }}
+                    {% endfor %}
+                {% else %}
+                    <p>Нет доступных товаров</p>
+                {% endif %}
+            </div>
+            <div class="col-md-5">
+                <h2 style="color: black">Ваш заказ</h2>
+
+                 {% if basket %}
+                <a style="color: #913518" href="{{url_for('bp_order.clear_basket')}}">Очистить заказ  </a>  <a href="{{url_for('bp_order.save_order')}}" style="color: black; font-size: 20pt; font-family: Oswald, sans-serif !important; " >  Оформить заказ</a>
+
+{% endif %}
+                 {% if flag %}
+<div class="block2">
+    Простите, но данное время уже забронированно. Попробуйте выбрать другое время.
+</div>
+    {% endif %}
+                {% if basket %}
+                <br>
+                    {% for key in basket %}
+                        {{ utils.render_item(basket[key], key, show_form=False, show_amount=True, date_today=date_today) }}
+                    {% endfor %}
+                    <h2 style="color: black">Суммарная стоимость заказа: {{order_price}}</h2>
+                <br>
+                {% else %}
+
+                    <p>пусто</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

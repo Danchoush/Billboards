@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{message}}</title>
+     <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+</head>
+<style>
+   body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+   select {
+    width:  150px;
+}
+</style>
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+  <h4 align="center"> Поиск данных по фамилии арендатора</h4>
+    <div align = center >
+        <form action="" method ="POST" >
+            <label for="input">Введите фамилию арендатора:</label>
+<!--            <input name = input id="input" type = text placeholder = ВВОД>-->
+             <select id="input" name="input" >
+    {% for name in names%}
+   <option value="{{name[0]}}" >{{name[0]}}</option>
+    {% endfor %}
+</select>
+            <br><br><br><br><br><br><br>
+            <input type = submit value ="Найти">
+        </form>
+    </div>
+  <br><br><br>
+<center>
+    <h4> {{mes}} </h4>
+    </center>
+<div align = center>
+      <a href={{url_for('query')}}> Вернутся на главную страницу</a>
+    </div>
+
+</body>
+</html>

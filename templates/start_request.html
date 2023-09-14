@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+</head>
+<style>
+   body {
+        background: url(https://i.pinimg.com/originals/74/73/0b/74730bd55e429239f7b71e15bf83a41e.jpg);
+        background-size: cover;
+   }
+</style>
+<body>
+<!--    <h4 align = center> Добро пожаловать в рекламное агенство "Pinkman & White"</h4>-->
+  <h2 align = center> Выберите действие</h2>
+    <div align = center>
+      <a href={{url_for('query')}}> Меню</a>
+      <br><br>
+        <a href={{url_for('bp_auth.start_auth')}}> Авторизация</a>
+      <br><br>
+      <a href={{url_for('goodbye')}}> Завершить работу</a>
+    </div>
+  <br><br>
+    <center>
+<!--        <img src="https://i.pinimg.com/originals/74/73/0b/74730bd55e429239f7b71e15bf83a41e.jpg"-->
+<!--        width="1200"-->
+<!--        height="1000">-->
+    </center>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{message}}</title>
+     <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+</head>
+<style>
+   body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+</style>
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+  <h4 align="center"> Поиск данных по номеру телефона</h4>
+    <div align = center>
+        <form action="", method ="POST">
+            <label for="input">Введите 11-значный номер телефона:</label>
+            <input name = input id="input" type = tel pattern="8[0-9]{10}" placeholder = ВВОД>
+            <br><br><br><br><br><br><br>
+            <input type = submit value ="Найти">
+        </form>
+    </div>
+  <br><br><br>
+<center>
+    <h4> {{mes}} </h4>
+    </center>
+<div align = center>
+      <a href={{url_for('bp_zaproses.queries')}}> Вернутся</a>
+    </div>
+
+</body>
+</html>

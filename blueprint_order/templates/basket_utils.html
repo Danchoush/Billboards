@@ -1,0 +1,47 @@
+{% macro render_item(item, key, show_form=False, show_amount=False, date_today=date_today) %}
+<div style="border-style: solid; border-color: black; margin: 5px; background: white">
+    <p>
+        <span style="color: black"> Адрес:</span>
+        <span style="color: #913518"> {{item['b_address']}}</span>
+        <span style="color: black"> Цена:</span>
+        <span style="color: #913518"> {{item['b_price']}}</span>
+        {% if show_amount %}
+        <span style="color: black"> Период:</span>
+        <span style="color: #913518"> {{item['period']}}</span>
+    </p>
+    <p>
+        <span style="color: black"> Дата начала аренды:</span>
+        <span style="color: #913518"> {{item['start']}}</span>
+    <div align="right">
+        <form action="" method="post">
+            <input type="hidden" name="b_id" value="{{key}}">
+            <input type="hidden" name="del" value="True">
+            <input type="hidden" name="info" value="False">
+            <input type="submit" name="delete" value="Удалить">
+        </form>
+</div>
+        {% endif %}
+    </p>
+
+    {% if show_form %}
+    <div >
+        <form action="" method="post">
+            <input type="hidden" name="b_id" value="{{item['b_id']}}">
+            <input type="hidden" name="info" value="False">
+            <input type="hidden" name="del" value="False">
+            <input name = "period" id="period" type="number" min="1" max="60" step="1" placeholder = ВВОД>
+            <input name = "start" id="start" type="date"  min="{{date_today}}" placeholder = ВВОД>
+            <input type="submit" name="action" value="Добавить">
+        </form>
+    </div>
+    <div align="right">
+        <form action="" method="post">
+            <input type="hidden" name="b_id" value="{{item['b_id']}}">
+            <input type="hidden" name="info" value="True">
+            <input type="hidden" name="del" value="False">
+            <input type="submit" name="extended_info" value="Доп. информация о биллборде">
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,14 @@
+{
+  "analitik": [
+    "bp_zaproses",
+    "bp_report"
+  ],
+  "owner": [
+    "bp_report.variants",
+    "bp_report.view_pm",
+    "bp_report.view_rb"
+  ],
+  "external": [
+    "bp_order"
+  ]
+}

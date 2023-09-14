@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication</title>
+    <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+</head>
+<style>
+   body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+</style>
+
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+  <h1 align="center"> Введите логин и пароль</h1> <br><br>
+  <div align="center">
+      <br><br><br>
+      <form method="POST" action="">
+          <label for="login"> Логин</label>
+          <input type="text" id="login" name="login"><br><br>
+          <label for="password"> Пароль </label>
+          <input type="password" name="password" id="password"><br><br>
+<br><br><br>
+          <input type="submit" class="submit" value="Отправить">
+      </form>
+      <br><br>
+      <h2 align="center">{{ message }}</h2>
+  </div>
+</body>
+</html>

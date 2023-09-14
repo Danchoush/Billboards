@@ -1,0 +1,65 @@
+h4 {
+    font-size: 23pt;
+    color: #913518;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 16pt;
+    color: black;
+    font-weight: bold;
+}
+h3 {
+    font-size: 14pt;
+    color: black;
+}
+
+a {
+    font-size: 16pt;
+    color: black;
+}
+
+label {
+    font-size: 18pt;
+    color: grey;
+}
+
+input {
+    width:  200px;
+    height: 25px;
+}
+option {
+    text-align:center;
+    font-size: 12pt;
+    color: black;
+}
+
+select {
+font-size: 12pt;
+    width:  100px;
+    height: 30px;
+}
+
+td {
+    font-size: 16pt;
+    color: #913518;
+    text-align:center;
+    border: 2pt solid;
+    border-color: black;
+}
+
+a:link {
+    text-decoration: none;
+   }
+   A:visited { text-decoration: none; }
+   A:active { text-decoration: none; }
+    A:hover {
+    font-size: 30px;
+    font-weight: bold;
+    color: #913518;
+   }
+body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+

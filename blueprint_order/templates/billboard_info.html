@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='nicepage.css')}}" media="screen">
+<link rel="stylesheet" href="{{url_for('static', filename='chose.css')}}" media="screen">
+    <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+<style>
+   body {
+        background: None;
+        color: white;
+        background-size: cover
+   }
+   td {
+    font-size: 25pt;
+    color: #913518;
+    text-align:center;
+    border: 2pt solid;
+    border-color: black;
+    width: 500px;
+    height: 50px
+}
+</style>
+</head>
+<body>
+<header class="u-clearfix u-gradient u-header u-header" id="sec-217c"><div class="u-clearfix u-sheet u-sheet-1">
+       <h2 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">Информация о билборде.</h2>
+        <a href="{{url_for('bp_order.order_index')}}" class="u-btn u-button-style u-none u-text-custom-color-1 u-text-hover-palette-5-dark-3 u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="np://user.desktop.nicepage.com/Site_580601497/images/3809010.png" alt=""></span>&nbsp;Вернутся
+        </a>
+      </div></header>
+<br>
+<!--<img src="{{items[0][8]}}" style="float:right;width:900px;height:700px;">-->
+
+<div align="right" style="float:right;width:100px;height:100px;">
+</div>
+<div style="float:right;width:500px;height:500px;">
+        <h2>Расписание аренды:</h2>
+    {% if result %}
+    <table border = 1 align = 'left' >
+      <tr>
+          {% for column in schema_2 %}
+            <td class= border align="center">{{column}}</td>
+          {% endfor %}
+      </tr>
+        {% for line in result %}
+          <tr>
+           {% for column in line %}
+            <td align = 'center' > {{column}} </td>
+           {% endfor %}
+         </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+     <h3>Пока все свободно</h3>
+    {% endif %}
+    </div>
+<div align="left" style="float:left;width:100px;height:100px;">
+</div>
+
+<div align="left" style="float:left;width:800px;height:800px;">
+
+{% for i in range(8) %}
+    <h2>{{schema_1[0][i]}}  {{items[0][i]}}</h2>
+{% endfor %}
+    <br><br>
+
+<!--<br><br>-->
+<!--    <a href="{{url_for('bp_order.order_index')}}"> Вернуться к оформлению заказа </a>-->
+</div>
+</body>
+</html>

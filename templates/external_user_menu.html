@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block external_user %}
+ <h4 align="center">Добро пожаловать Гость </h4>
+<h4 align="center"> Вам доступны следующие действия </h4>
+<p align="center">
+     <a href={{url_for('bp_order.order_index')}}> Заказ биллбордов</a>
+     <br><br><br><br><br>
+    <a href="/menu"> Нажмите для выхода в меню</a>
+</p>
+{% endblock %}

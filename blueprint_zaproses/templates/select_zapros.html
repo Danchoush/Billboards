@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Выбор запроса </title>
+     <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+
+</head>
+<style>
+   body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+</style>
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+<h4 align="center"> Выберите запрос:</h4>
+     <div align = center>
+     <a href={{url_for('bp_zaproses.month_search')}}> Поиск сведений об арендаторах(по дате заключения договора)</a>
+     <br><br><br><br><br>
+      <a href={{url_for('bp_zaproses.phone_search')}}> Поиск сведений об арендаторах(по номеру телефона)</a>
+         <br><br><br><br><br>
+      <a href={{url_for('bp_zaproses.sum_per_one')}}> Показать суммарную стоимость заказов одного арендатора</a>
+    </div>
+    <br><br><br><br><br>
+<div align = center>
+      <a href={{url_for('query')}}> Вернутся на главную страницу</a>
+    </div>
+  <br>
+</body>
+</html>

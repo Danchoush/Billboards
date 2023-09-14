@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказ создан</title>
+       <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+</head>
+<style>
+   body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+</style>
+
+<body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h4 align="center"> Заказ {{ order_id }} успешно создан</h4>
+<br><br><br><br><br><br><br><br>
+    <center>
+        <a href="{{url_for('bp_order.order_index')}}"> Нажмите для возврата на страницу заказов</a>
+    </center>
+</body>
+</html>

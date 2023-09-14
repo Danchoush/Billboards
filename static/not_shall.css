@@ -1,0 +1,20 @@
+h1 {
+    font-size: 35pt;
+    color: white;
+    font-weight: bold;
+}
+
+a {
+    font-size: 30pt;
+    color: white;
+}
+a:link {
+    text-decoration: none;
+   }
+   A:visited { text-decoration: none; }
+   A:active { text-decoration: none; }
+    A:hover {
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+   }

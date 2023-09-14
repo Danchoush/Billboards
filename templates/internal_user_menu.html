@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block internal_user %}
+{% if user_group == "owner"%}
+ <h4 align="center"> Вы вошли как Владелец </h4>
+<h4 align="center"> Вам доступны следующие действия </h4>
+<p align="center">
+{% endif%}
+{% if user_group == "analitik"%}
+ <h4 align="center"> Вы вошли как Аналитик </h4>
+<h4 align="center"> Вам доступны следующие действия </h4>
+<p align="center">
+<a href={{url_for('bp_zaproses.queries')}}> Запросы</a>
+         <br><br><br><br><br>
+{% endif%}
+      <a href={{url_for('bp_report.variants')}}> Отчеты</a>
+        <br><br><br><br><br>
+    <a href="/menu"> Нажмите для выхода в меню</a>
+</p>
+{% endblock %}

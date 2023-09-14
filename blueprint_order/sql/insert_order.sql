@@ -1,0 +1,1 @@
+INSERT orders VALUES(NULL, '$order_date', '$order_price', '$t_id')

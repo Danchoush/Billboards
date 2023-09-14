@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{message}}</title>
+     <link type=" text/css" rel="stylesheet" href="{{url_for('static',filename='start.css')}}">
+</head>
+<style>
+   body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+</style>
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+  <h4 align="center"> {{var}} отчета о прибыли за месяц</h4>
+    <div align = center>
+        <form action="", method ="POST">
+            <label for="input_month">Введите месяц и год</label>
+<!--           <input name = input_month id="input_month" type="number" min="1" max="12" step="1" placeholder = ВВОД>-->
+             <select id="input_month" name="input_month" >
+    {% for id in range(12)%}
+   <option value="{{id}}">{{month[id]}}</option>
+    {% endfor %}
+</select>
+<!--             <input name = input_year id="input_year" type="number" min="2018"  step="1" placeholder = ВВОД>-->
+            <select id="input_year" name="input_year" >
+    {% for year in range(2018,2030,1)%}
+   <option value="{{year}}">{{year}}</option>
+    {% endfor %}
+</select>
+            <br><br><br><br><br><br><br>
+            <input type = submit value ="Ввод">
+        </form>
+    </div>
+  <br>
+<center>
+    <h4> {{message}} </h4>
+    </center>
+
+<div align = center>
+      <a href={{url_for('bp_report.variants')}}> Вернутся</a>
+    </div>
+
+</body>
+</html>

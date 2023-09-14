@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base_menu</title>
+    <link href="static/start.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+   body {
+        background: url(https://unblast.com/wp-content/uploads/2020/03/Triangular-Billboard-Mockup-2-1536x1024.jpg);
+        background-size: cover;
+   }
+</style>
+<body>
+    <div>
+        <br><br><br><br><br><br><br><br><br><br>
+<!--        <h4 align="center"> Вам доступны следующие действия </h4>-->
+        {% block internal_user %}{% endblock %}
+        {% block external_user %}{% endblock %}
+    </div>
+</body>
+</html>
