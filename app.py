@@ -29,8 +29,6 @@ with open('data_files/report_url.json', 'r', encoding='utf-8') as file:
     report_url = json.load(file)
     app.config['report_url'] = report_url
 
-
-
 @app.route('/', methods=['GET', 'POST'])
 def query():
     if 'user_id' in session:
@@ -50,31 +48,6 @@ def goodbye():
     session.clear()
     return render_template('goodbye.html')
 
-
-#@app.route('/greeting/')
-#@app.route('/greeting/<name>')
-# def greeting_handler(name: str = None) -> str:
-#     if name is None:
-#         return 'Hello unknown'
-#     return f'Hello, {name}'  # -> "Hello, ivan" == "Hello, " + "ivan" == " ".join(["Hello, ", name])
-
-
-# @app.route('/products', methods=['GET'])
-# def get_all_products():
-#     sql = """
-#     select
-#         prod_id,
-#         prod_name,
-#         prod_price
-#     from supermarket
-#     """
-#     all_rows, schema = select(db_config, sql)
-#     return str(all_rows)
-
-
-# @app.route('/', methods=['GET', 'POST'])
-# def query():
-#     return render_template('start_request.html')
 
 @app.route('/form', methods=['GET', 'POST'])
 def form_handler():
